@@ -36,3 +36,9 @@ On every push, GitHub Actions will:
 - Display the MSE for each model in the Actions log
 
 Check `.github/workflows/ci.yml` for details.
+
+##Submitted By
+
+Rajkumar Chandrasekaran
+
+- G24AI2078
