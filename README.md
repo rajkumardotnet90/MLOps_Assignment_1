@@ -37,8 +37,7 @@ On every push, GitHub Actions will:
 
 Check `.github/workflows/ci.yml` for details.
 
-##Submitted By
+## Submitted By
 
 Rajkumar Chandrasekaran
-
 - G24AI2078
