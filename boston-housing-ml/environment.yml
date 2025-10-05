@@ -1,0 +1,15 @@
+name: boston-housing-ml
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - pandas
+  - scikit-learn
+  - jupyter
+  - matplotlib
+  - seaborn
+  - pip
+  - pip:
+      - pytest
+      - pytest-cov
