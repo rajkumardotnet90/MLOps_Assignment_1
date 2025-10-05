@@ -1,10 +1,11 @@
-from sklearn.datasets import load_boston
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.metrics import mean_squared_error
-import pandas as pd
-import numpy as np
-from src.utils import load_data, preprocess_data, evaluate_model
+import sys
+import os
+
+# Import custom functions from misc.py
+sys.path.append(os.path.join(os.path.dirname(__file__)))
+from misc import load_data, preprocess_data, evaluate_model
 
 def train_decision_tree():
     # Load and preprocess the data
@@ -20,11 +21,8 @@ def train_decision_tree():
     # Train the model
     model.fit(X_train, y_train)
 
-    # Make predictions
-    predictions = model.predict(X_test)
-
     # Evaluate the model
-    mse = mean_squared_error(y_test, predictions)
+    mse = evaluate_model(model, X_test, y_test)
     print(f'Mean Squared Error: {mse}')
 
 if __name__ == "__main__":

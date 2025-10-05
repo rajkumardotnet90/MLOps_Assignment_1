@@ -1,11 +1,13 @@
-def load_data(file_path):
-    import pandas as pd
-    data = pd.read_csv(file_path)
-    return data
+import sys
+import os
+
+# Add the data directory to the path and import load_data from download_boston.py
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'data'))
+from download_boston import load_data
 
 def preprocess_data(data):
     # Handle missing values
-    data.fillna(data.mean(), inplace=True)
+    data = data.fillna(data.mean())
     
     # Feature scaling
     from sklearn.preprocessing import StandardScaler
@@ -13,6 +15,7 @@ def preprocess_data(data):
     scaled_features = scaler.fit_transform(data.drop('MEDV', axis=1))
     
     # Create a DataFrame with scaled features
+    import pandas as pd
     scaled_data = pd.DataFrame(scaled_features, columns=data.columns[:-1])
     scaled_data['MEDV'] = data['MEDV'].values  # Add target variable back
     
