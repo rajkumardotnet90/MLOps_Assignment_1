@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run Decision Tree model
-        run: python src/train_decision_tree.py
+        run: python train_decision_tree.py
 
-      - name: Run Kernel Ridge model
+      - name: Run Kesrnel Ridge model
         run: python src/train_kernel_ridge.py
