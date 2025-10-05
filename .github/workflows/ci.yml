@@ -23,4 +23,4 @@ jobs:
         run: python train_decision_tree.py
 
       - name: Run Kesrnel Ridge model
-        run: python src/train_kernel_ridge.py
+        run: python train_kernel_ridge.py
